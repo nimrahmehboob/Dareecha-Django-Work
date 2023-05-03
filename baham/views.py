@@ -41,4 +41,16 @@ def view_vehicles(request):
 
 
 
+def create_vehicle(request):
+    template = loader.get_template(template_name='createVehicle.html')
+    context = {
+    'title': 'Create Vehicles',
+    'heading': 'Welcome to Baham',
+    'vehicle_types': [t for t in VehicleTypes]
+    }
+
+    return HttpResponse (template.render(context,request=request))
+    
+
+
 
